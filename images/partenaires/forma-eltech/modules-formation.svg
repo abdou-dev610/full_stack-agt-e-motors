@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <!-- Background -->
+  <rect width="400" height="200" fill="#e8f5e9"/>
+  
+  <!-- Title -->
+  <text x="200" y="25" text-anchor="middle" fill="#00796b" font-size="16" font-weight="bold" font-family="Arial">Modules de Formation IRVE</text>
+  
+  <!-- Module 1 -->
+  <rect x="20" y="45" width="110" height="60" fill="white" stroke="#00796b" stroke-width="2" rx="5"/>
+  <text x="75" y="65" text-anchor="middle" fill="#00796b" font-size="14" font-weight="bold" font-family="Arial">Module 1</text>
+  <text x="75" y="82" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">Électricité</text>
+  <text x="75" y="96" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">Fondamentaux</text>
+  
+  <!-- Module 2 -->
+  <rect x="145" y="45" width="110" height="60" fill="white" stroke="#004d40" stroke-width="2" rx="5"/>
+  <text x="200" y="65" text-anchor="middle" fill="#004d40" font-size="14" font-weight="bold" font-family="Arial">Module 2</text>
+  <text x="200" y="82" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">Installation</text>
+  <text x="200" y="96" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">Bornes IRVE</text>
+  
+  <!-- Module 3 -->
+  <rect x="270" y="45" width="110" height="60" fill="white" stroke="#1b5e20" stroke-width="2" rx="5"/>
+  <text x="325" y="65" text-anchor="middle" fill="#1b5e20" font-size="14" font-weight="bold" font-family="Arial">Module 3</text>
+  <text x="325" y="82" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">Habilitation</text>
+  <text x="325" y="96" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">Électrique</text>
+  
+  <!-- Module 4 -->
+  <rect x="20" y="120" width="110" height="60" fill="white" stroke="#00796b" stroke-width="2" rx="5"/>
+  <text x="75" y="140" text-anchor="middle" fill="#00796b" font-size="14" font-weight="bold" font-family="Arial">Module 4</text>
+  <text x="75" y="157" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">Photovoltaïque</text>
+  <text x="75" y="171" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">& Énergies</text>
+  
+  <!-- Module 5 -->
+  <rect x="145" y="120" width="110" height="60" fill="white" stroke="#004d40" stroke-width="2" rx="5"/>
+  <text x="200" y="140" text-anchor="middle" fill="#004d40" font-size="14" font-weight="bold" font-family="Arial">Module 5</text>
+  <text x="200" y="157" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">Maintenance</text>
+  <text x="200" y="171" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">& Diagnostic</text>
+  
+  <!-- Module 6 -->
+  <rect x="270" y="120" width="110" height="60" fill="white" stroke="#1b5e20" stroke-width="2" rx="5"/>
+  <text x="325" y="140" text-anchor="middle" fill="#1b5e20" font-size="14" font-weight="bold" font-family="Arial">Module 6</text>
+  <text x="325" y="157" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">Sécurité</text>
+  <text x="325" y="171" text-anchor="middle" fill="#333" font-size="10" font-family="Arial">& Normes</text>
+</svg>

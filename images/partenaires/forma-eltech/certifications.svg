@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <!-- Background -->
+  <rect width="400" height="200" fill="#f8f9fa"/>
+  
+  <!-- Certificate badge 1 -->
+  <circle cx="80" cy="100" r="35" fill="#00796b"/>
+  <text x="80" y="90" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">QualiEnR</text>
+  <text x="80" y="105" text-anchor="middle" fill="white" font-size="10" font-family="Arial">RGE</text>
+  <path d="M 65 115 L 73 123 L 95 101" stroke="white" stroke-width="3" fill="none"/>
+  
+  <!-- Certificate badge 2 -->
+  <circle cx="200" cy="100" r="35" fill="#004d40"/>
+  <text x="200" y="90" text-anchor="middle" fill="white" font-size="11" font-weight="bold" font-family="Arial">Qualifelec</text>
+  <text x="200" y="105" text-anchor="middle" fill="white" font-size="10" font-family="Arial">IRVE</text>
+  <path d="M 185 115 L 193 123 L 215 101" stroke="white" stroke-width="3" fill="none"/>
+  
+  <!-- Certificate badge 3 -->
+  <circle cx="320" cy="100" r="35" fill="#1b5e20"/>
+  <text x="320" y="90" text-anchor="middle" fill="white" font-size="11" font-weight="bold" font-family="Arial">Qualibat</text>
+  <text x="320" y="105" text-anchor="middle" fill="white" font-size="10" font-family="Arial">Certifié</text>
+  <path d="M 305 115 L 313 123 L 335 101" stroke="white" stroke-width="3" fill="none"/>
+  
+  <!-- Title -->
+  <text x="200" y="30" text-anchor="middle" fill="#00796b" font-size="18" font-weight="bold" font-family="Arial">Certifications Officielles</text>
+  
+  <!-- Bottom text -->
+  <text x="200" y="180" text-anchor="middle" fill="#555" font-size="12" font-family="Arial">Organisme certifié et qualifié</text>
+</svg>

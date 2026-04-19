@@ -256,6 +256,183 @@
                 margin: 10px;
             }
 
+            /* Styles pour le partenaire FORMA ELTECH */
+            .partner-card {
+                background: #f8f9fa;
+                border-radius: 15px;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                margin: 40px 0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .partner-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            }
+
+            .partner-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .partner-header h3 {
+                color: #00796b;
+                font-size: 1.8rem;
+                margin: 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .partner-header h3 .icon {
+                margin-right: 10px;
+                font-size: 2rem;
+            }
+
+            .partner-subtitle {
+                color: #555;
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+
+            .partner-description {
+                font-size: 1rem;
+                line-height: 1.8;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            .partner-description p {
+                margin-bottom: 15px;
+            }
+
+            .partner-specialties {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px 0;
+                border-left: 4px solid #00796b;
+            }
+
+            .partner-specialties h4 {
+                color: #00796b;
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .partner-specialties ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .partner-specialties ul li {
+                padding: 8px 0;
+                color: #333;
+                display: flex;
+                align-items: center;
+            }
+
+            .partner-specialties ul li::before {
+                content: "⚡";
+                color: #00796b;
+                margin-right: 10px;
+                font-size: 1.2rem;
+            }
+
+            .partner-gallery {
+                display: flex;
+                gap: 15px;
+                margin: 25px 0;
+                flex-wrap: wrap;
+            }
+
+            .partner-gallery img {
+                flex: 1;
+                min-width: 200px;
+                max-width: 32%;
+                height: 200px;
+                object-fit: contain;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                padding: 10px;
+            }
+
+            .partner-gallery img:hover {
+                transform: scale(1.05);
+            }
+
+            .partner-highlight-box {
+                background: linear-gradient(135deg, #00796b 0%, #004d40 100%);
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 25px 0;
+                text-align: center;
+                font-size: 1.1rem;
+                line-height: 1.6;
+                box-shadow: 0 4px 15px rgba(0, 121, 107, 0.3);
+            }
+
+            .partner-strategic-note {
+                background: #e8f5e9;
+                padding: 15px;
+                border-radius: 8px;
+                margin: 20px 0;
+                font-style: italic;
+                color: #2e7d32;
+                border-left: 4px solid #4caf50;
+            }
+
+            .partner-btn {
+                display: inline-block;
+                background: #00796b;
+                color: white;
+                padding: 12px 30px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: bold;
+                margin-top: 20px;
+                transition: background 0.3s ease, transform 0.3s ease;
+                box-shadow: 0 4px 10px rgba(0, 121, 107, 0.3);
+            }
+
+            .partner-btn:hover {
+                background: #004d40;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba(0, 121, 107, 0.4);
+            }
+
+            /* Responsive design pour mobile */
+            @media (max-width: 768px) {
+                .partner-card {
+                    padding: 20px;
+                }
+
+                .partner-header h3 {
+                    font-size: 1.4rem;
+                }
+
+                .partner-gallery {
+                    flex-direction: column;
+                }
+
+                .partner-gallery img {
+                    max-width: 100%;
+                    height: 180px;
+                    object-fit: contain;
+                    background: white;
+                    padding: 10px;
+                }
+
+                .partner-btn {
+                    display: block;
+                    text-align: center;
+                }
+            }
             
         </style>
          <style>
@@ -405,6 +582,241 @@
 <p>
     🌍 CIRCUTOR (Espagne)
 </p>
+<p>
+    🌍 FORMA-ELTECH (France)
+</p>
+<p>
+    🌍 BLUESUN (Chine)
+</p>
+<p>
+    🌍 BLUE2BGREEN (France)
+</p>
+<p>
+    🌍 THINKCAR (Chine)
+</p>
+
+<!-- Nouveau partenaire BLUESUN -->
+<div class="partner-card">
+    <div class="partner-header">
+        <h3><span class="icon">☀️</span> BLUESUN – Leader mondial des solutions solaires</h3>
+    </div>
+
+    <div class="partner-strategic-note">
+        <strong>Partenaire officiel pour la distribution exclusive de solutions photovoltaïques, batteries et systèmes de gestion au Sénégal et en Afrique de l'Ouest.</strong>
+    </div>
+
+    <div class="partner-description">
+        <p>
+            <strong>BLUESUN</strong> est l'un des principaux fournisseurs de solutions solaires en Chine, spécialisé dans la recherche 
+            et le développement de panneaux solaires, de batteries au lithium et de systèmes de gestion de batteries (BMS). 
+            Fin 2024, les produits Bluesun étaient exportés dans plus de 185 pays et régions du monde.
+        </p>
+        <p>
+            Fort d'une expertise reconnue et d'une présence internationale majeure, Bluesun possède des filiales en Italie, 
+            en Pologne, en Afrique du Sud, aux États-Unis et au Japon, ainsi que des entrepôts stratégiquement positionnés à 
+            Los Angeles, Houston et Rotterdam. Nos produits sont certifiés conformes aux normes internationales les plus strictes : 
+            <strong>TUV, ETL, UL1703, IEC, CEC, CE et INMETRO</strong>, répondant aux exigences les plus exigeantes du marché mondial.
+        </p>
+        <p>
+            En tant que partenaire officiel d'AGT E-MOTORS, Bluesun assure la distribution exclusive au Sénégal ainsi que dans 
+            l'ensemble de l'Afrique de l'Ouest. Ce partenariat stratégique permet à nos stagiaires d'accéder aux technologies solaires 
+            les plus innovantes et performantes, essentielles pour l'électrification durable du continent africain et l'intégration 
+            des énergies renouvelables dans les systèmes de mobilité électrique.
+        </p>
+    </div>
+
+    <div class="partner-specialties">
+        <h4>💡 Produits et solutions</h4>
+        <ul>
+            <li>Modules photovoltaïques de haute performance</li>
+            <li>Onduleurs intelligents et systèmes de conversion</li>
+            <li>Batteries lithium avec 15 ans de durée de vie</li>
+            <li>Systèmes de gestion de batteries (BMS) avancés</li>
+            <li>Logiciels de gestion et monitoring d'énergie</li>
+            <li>Solutions de stockage d'énergie commercial et industriel</li>
+            <li>Systèmes intégrés pour l'électrification décentralisée</li>
+            <li>Support technique et maintenance</li>
+        </ul>
+    </div>
+
+    <div class="partner-highlight-box">
+        📌 Leader mondial des solutions solaires avec présence dans 185+ pays. 
+        Distributeur exclusif au Sénégal et en Afrique de l'Ouest pour AGT E-MOTORS, 
+        proposant des technologies certifiées internationales pour l'énergie solaire et le stockage.
+    </div>
+
+    <a href="https://www.bluesunpv.com/fr/solutions/commercial-industrial-energy-storage/" target="_blank" rel="noopener noreferrer" class="partner-btn">
+        🔗 Visiter BLUESUN
+    </a>
+</div>
+<!-- Fin du partenaire BLUESUN -->
+
+<!-- Vidéo de présentation BLUESUN -->
+<div style="margin: 40px auto; max-width: 900px;">
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+        <h3 style="color: #00796b; text-align: center; margin-bottom: 20px; font-size: 1.5rem;">
+            🎥 Découvrez BLUESUN et les solutions solaires
+        </h3>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+            <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                src="https://www.youtube.com/embed/h5C7cfnKRzY" 
+                title="BLUESUN - Solutions Solaires" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Nouveau partenaire FORMA ELTECH -->
+<div class="partner-card">
+    <div class="partner-header">
+        <h3><span class="icon">🌍</span> FORMA ELTECH – Organisme de formation professionnelle</h3>
+    </div>
+
+    <div class="partner-strategic-note">
+        <strong>Partenaire académique stratégique pour le développement des compétences en infrastructures électriques et IRVE.</strong>
+    </div>
+
+    <div class="partner-description">
+        <p>
+            <strong>FORMA ELTECH</strong> est un organisme de formation professionnelle de premier plan basé à Lens (Harnes), 
+            spécialisé dans l'accompagnement des professionnels du secteur électrique et de la transition énergétique. 
+            Fort d'une expertise reconnue, FORMA ELTECH forme les acteurs du bâtiment, de l'industrie et des infrastructures 
+            aux nouvelles technologies et aux meilleures pratiques du domaine électrique.
+        </p>
+        <p>
+            Notre partenariat avec FORMA ELTECH s'inscrit dans une démarche d'excellence académique et technique. 
+            Leur approche pédagogique alliant théorie approfondie et pratique terrain permet à nos stagiaires d'acquérir 
+            les compétences essentielles pour répondre aux exigences croissantes du marché de l'électromobilité et des 
+            infrastructures de recharge. FORMA ELTECH est certifié et reconnu par les principaux organismes qualificatifs 
+            du secteur (QualiEnR, Qualifelec, Qualibat), garantissant ainsi une formation de qualité supérieure et 
+            l'obtention de la qualification RGE (Reconnu Garant de l'Environnement).
+        </p>
+    </div>
+
+    <div class="partner-specialties">
+        <h4>🎓 Spécialités de formation</h4>
+        <ul>
+            <li>Réseaux de distribution électrique</li>
+            <li>Habilitation électrique</li>
+            <li>Travaux sous tension BT / HTA</li>
+            <li>Électricité / Électrotechnique</li>
+            <li>Transition énergétique – Photovoltaïque / IRVE</li>
+            <li>Sécurité et Secourisme</li>
+            <li>Formation de formateur</li>
+        </ul>
+    </div>
+
+    <div class="partner-gallery">
+        <img src="images/partenaires/forma-eltech/logo1.jpg" alt="Logo FORMA ELTECH">
+        <img src="images/partenaires/forma-eltech/logo2.jpg" alt="Certifications QualiEnR, Qualifelec, Qualibat">
+        <img src="images/partenaires/forma-eltech/logo3.jpg" alt="Modules de formation IRVE et électrotechnique">
+    </div>
+
+    <div class="partner-highlight-box">
+        📌 Organisme de formation professionnelle à Lens (Harnes), spécialisé dans les formations qualifiantes 
+        et certifiantes pour les professionnels de la transition énergétique souhaitant obtenir la qualification RGE.
+    </div>
+
+    <a href="https://www.forma-eltech.fr" target="_blank" rel="noopener noreferrer" class="partner-btn">
+        🔗 Visiter FORMA ELTECH
+    </a>
+</div>
+<!-- Fin du partenaire FORMA ELTECH -->
+
+<!-- Vidéo de présentation FORMA ELTECH -->
+<div style="margin: 40px auto; max-width: 900px;">
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+        <h3 style="color: #00796b; text-align: center; margin-bottom: 20px; font-size: 1.5rem;">
+            🎥 Découvrez FORMA ELTECH en vidéo
+        </h3>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+            <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                src="https://www.youtube.com/embed/DV_eHZ5Kqfs" 
+                title="Présentation FORMA ELTECH" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Nouveau partenaire BLUE2BGREEN -->
+<div class="partner-card">
+    <div class="partner-header">
+        <h3><span class="icon">🌍</span> BLUE2BGREEN – Solutions innovantes pour la mobilité électrique</h3>
+    </div>
+
+    <div class="partner-strategic-note">
+        <strong>Partenaire technologique pour le contrôle d'accès, la facturation, et la gestion des infrastructures de recharge.</strong>
+    </div>
+
+    <div class="partner-description">
+        <p>
+            <strong>BLUE2BGREEN</strong> est un bureau d'études spécialisé basé à Roost Warendin (59) en France, 
+            qui accompagne les entreprises à définir leurs besoins et installer des points de recharge pour 
+            véhicules électriques et hybrides rechargeables. Avec une expertise reconnue en conseils techniques 
+            et commerciaux, assistance à projet, formation et animation, BLUE2BGREEN est un acteur incontournable 
+            de l'écosystème de la mobilité électrique.
+        </p>
+        <p>
+            Notre partenariat avec BLUE2BGREEN apporte une dimension stratégique majeure à AGT E-MOTORS. 
+            La plateforme propose des solutions innovantes et intégrées pour le contrôle des accès, la facturation 
+            et le paiement, la supervision et la gestion des services. BLUE2BGREEN offre des solutions individuelles 
+            et en partage de ressources, idéales pour accompagner le déploiement d'infrastructures de recharge au Sénégal 
+            et en Afrique. Ce partenariat garantit à nos stagiaires un accès aux technologies de pointe du secteur et 
+            aux meilleures pratiques internationales.
+        </p>
+    </div>
+
+    <div class="partner-specialties">
+        <h4>⚡ Domaines d'expertise</h4>
+        <ul>
+            <li>Conseils techniques et commerciaux pour infrastructures de recharge</li>
+            <li>Assistance à projet et déploiement d'IRVE</li>
+            <li>Systèmes de contrôle d'accès et de gestion</li>
+            <li>Solutions de facturation et paiement</li>
+            <li>Supervision et monitoring des infrastructures</li>
+            <li>Gestion intelligente de l'énergie et des ressources partagées</li>
+            <li>Formation technique et commerciale</li>
+            <li>Animation et accompagnement de projets</li>
+        </ul>
+    </div>
+
+    <div class="partner-highlight-box">
+        📌 Bureau d'études innovant à Roost Warendin (59), proposant des solutions complètes et intégrées 
+        pour le déploiement d'infrastructures de recharge électrique, du conseil à la mise en œuvre et la gestion.
+    </div>
+
+    <a href="https://www.declic-mobilites.org/outils-de-la-mobilite/annuaire-entreprises/entreprise/7-blue2green" target="_blank" rel="noopener noreferrer" class="partner-btn">
+        🔗 Visiter BLUE2BGREEN
+    </a>
+</div>
+<!-- Fin du partenaire BLUE2BGREEN -->
+
+<!-- Vidéo de présentation BLUE2BGREEN -->
+<div style="margin: 40px auto; max-width: 900px;">
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+        <h3 style="color: #00796b; text-align: center; margin-bottom: 20px; font-size: 1.5rem;">
+            🎥 Découvrez BLUE2BGREEN et le partenariat avec AGT E-MOTORS
+        </h3>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+            <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                src="https://www.youtube.com/embed/VliP6dAz9MU" 
+                title="BLUE2BGREEN - Partenariat AGT E-MOTORS" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
 
 <p>
     Grâce à ces collaborations, nos stagiaires ont accès aux dernières innovations et méthodologies du marché.
