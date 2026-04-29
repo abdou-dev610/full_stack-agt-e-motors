@@ -11,6 +11,7 @@ const orderRoutes = require('./routes/orderRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const quoteRoutes = require('./routes/quoteRoutes');
 const devisRoutes = require('./routes/devisRoutes');
+const newsletterRoutes = require('./routes/newsletterRoutes');
 
 const app = express();
 
@@ -44,6 +45,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/contacts', contactRoutes);
 app.use('/api/quotes', quoteRoutes);
 app.use('/api/devis', devisRoutes);
+app.use('/api/newsletter', newsletterRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
