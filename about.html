@@ -318,7 +318,7 @@
               <button type="submit" class="normal">Sign Up</button>
           </form>
           <script>
-          if (!window._nlDef) { window._nlDef = true; window.newsletterSignup = async function(e) { e.preventDefault(); var em = document.getElementById('newsletter-email').value; var api = CONFIG.BACKEND_URL; var btn = e.target.querySelector('button'); btn.disabled=true; btn.textContent='...'; try { var r = await fetch(api+'/api/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})}); var d = await r.json(); alert(d.success?'Merci ! Vous êtes inscrit à notre newsletter.':d.message||'Erreur. Veuillez réessayer.'); if(d.success) e.target.reset(); } catch(err) { alert('Erreur de connexion.'); } btn.disabled=false; btn.textContent='Sign Up'; }; }
+          if (!window._nlDef) { window._nlDef = true; window.newsletterSignup = async function(e) { e.preventDefault(); var em = document.getElementById('newsletter-email').value; var btn = e.target.querySelector('button'); btn.disabled=true; btn.textContent='...'; try { var r = await fetch('/api/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})}); var d = await r.json(); alert(d.success?'Merci ! Vous êtes inscrit à notre newsletter.':d.message||'Erreur. Veuillez réessayer.'); if(d.success) e.target.reset(); } catch(err) { alert('Erreur de connexion.'); } btn.disabled=false; btn.textContent='Sign Up'; }; }
           </script>
       </div>
   </section>

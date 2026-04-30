@@ -19,18 +19,29 @@ const app = express();
 connectDB();
 
 // Middleware
+const allowedOrigins = [
+    'http://localhost:5500',
+    'http://127.0.0.1:5500',
+    'http://localhost:3000',
+    'https://agtemotors.com',
+    'https://www.agtemotors.com',
+    'https://full-stack-agt-e-motors.vercel.app',
+    /\.vercel\.app$/,
+];
+
 app.use(cors({
-    origin: [
-        'http://localhost:5500',
-        'http://127.0.0.1:5500',
-        'http://localhost:3000',
-        'https://agtemotors.com',
-        'https://www.agtemotors.com',
-        /\.vercel\.app$/,
-    ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        const allowed = allowedOrigins.some(o =>
+            o instanceof RegExp ? o.test(origin) : o === origin
+        );
+        callback(allowed ? null : new Error('CORS not allowed'), allowed);
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
 }));
+app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
