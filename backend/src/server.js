@@ -24,6 +24,8 @@ app.use(cors({
         'http://localhost:5500',
         'http://127.0.0.1:5500',
         'http://localhost:3000',
+        'https://agtemotors.com',
+        'https://www.agtemotors.com',
         /\.vercel\.app$/,
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
