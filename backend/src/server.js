@@ -4,7 +4,6 @@ const cors = require('cors');
 const connectDB = require('./config/database');
 const errorHandler = require('./middleware/errorHandler');
 
-// Import routes
 const healthRoutes = require('./routes/healthRoutes');
 const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
@@ -15,43 +14,59 @@ const newsletterRoutes = require('./routes/newsletterRoutes');
 
 const app = express();
 
-// Connect to database
 connectDB();
 
-// Middleware
 const allowedOrigins = [
     'http://localhost:5500',
     'http://127.0.0.1:5500',
+    'http://localhost:5501',
+    'http://127.0.0.1:5501',
     'http://localhost:3000',
+    'http://127.0.0.1:3000',
     'https://agtemotors.com',
     'https://www.agtemotors.com',
+    'http://agtemotors.com',
+    'http://www.agtemotors.com',
+    'https://api.agtemotors.com',
     'https://full-stack-agt-e-motors.vercel.app',
     /\.vercel\.app$/,
 ];
 
-app.use(cors({
+if (process.env.FRONTEND_URL) {
+    allowedOrigins.push(process.env.FRONTEND_URL);
+}
+
+const corsOptions = {
     origin: (origin, callback) => {
         if (!origin) return callback(null, true);
         const allowed = allowedOrigins.some(o =>
             o instanceof RegExp ? o.test(origin) : o === origin
         );
-        callback(allowed ? null : new Error('CORS not allowed'), allowed);
+        if (allowed) {
+            callback(null, true);
+        } else {
+            console.warn(`CORS blocked: ${origin}`);
+            callback(new Error(`CORS policy: origin ${origin} not allowed`));
+        }
     },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    exposedHeaders: ['Content-Type'],
     credentials: true,
-}));
-app.options('*', cors());
-app.use(express.json());
+    optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+
+app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
-// Request logging middleware
 app.use((req, res, next) => {
-    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path} — origin: ${req.headers.origin || 'direct'}`);
     next();
 });
 
-// Routes
 app.use('/api/health', healthRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
@@ -60,54 +75,50 @@ app.use('/api/quotes', quoteRoutes);
 app.use('/api/devis', devisRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 
-// Root endpoint
 app.get('/', (req, res) => {
     res.json({
+        success: true,
         message: 'AGT E Motors API',
         version: '1.0.0',
-        endpoints: {
-            health: '/api/health',
-            products: '/api/products',
-            orders: '/api/orders',
-            contacts: '/api/contacts',
-            quotes: '/api/quotes',
-        },
+        endpoints: [
+            'GET  /api/health',
+            'GET  /api/products',
+            'POST /api/products',
+            'GET  /api/orders',
+            'POST /api/orders',
+            'GET  /api/contacts',
+            'POST /api/contacts',
+            'GET  /api/quotes',
+            'POST /api/quotes',
+            'POST /api/newsletter',
+        ],
     });
 });
 
-// 404 handler
 app.use((req, res) => {
-    res.status(404).json({
-        success: false,
-        message: 'Route not found',
-    });
+    res.status(404).json({ success: false, message: `Route ${req.method} ${req.path} not found` });
 });
 
-// Error handling middleware
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
+    const frontendUrl = process.env.FRONTEND_URL || 'non configuré';
     console.log(`
     ╔══════════════════════════════════════════════╗
     ║       AGT E Motors API Server Started        ║
     ╚══════════════════════════════════════════════╝
-    
-    Server running on: http://localhost:${PORT}
-    Environment: ${process.env.NODE_ENV || 'development'}
-    Database: ${process.env.MONGODB_URI || 'Not configured'}
-    
-    Available endpoints:
-    - GET  /
+
+    Server    : http://localhost:${PORT}
+    Env       : ${process.env.NODE_ENV || 'development'}
+    Frontend  : ${frontendUrl}
+    CORS dev  : http://127.0.0.1:5501, http://localhost:5501
+
+    Routes actives:
     - GET  /api/health
-    - GET  /api/products
-    - POST /api/products
-    - GET  /api/orders
-    - POST /api/orders
-    - GET  /api/contacts
+    - POST /api/newsletter
     - POST /api/contacts
-    - GET  /api/quotes
     - POST /api/quotes
     `);
 });

@@ -27,6 +27,7 @@
             <li><a class="active" href="index.html">Accueil</a></li>
             <li><a href="shop.html">Produits</a></li>
             <li><a href="blog.html">Services</a></li>
+            <li><a href="reseaux-irve.html">R&#233;seaux IRVE</a></li>
             <li><a href="about.html">À propos</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="formation.html">Formations</a></li>
@@ -187,7 +188,7 @@
         };
 
         try {
-          const res = await fetch('/api/devis', {
+          const res = await fetch(`${CONFIG.API_URL}/devis`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
@@ -233,7 +234,7 @@
               <button type="submit" class="normal">Sign Up</button>
           </form>
           <script>
-          if (!window._nlDef) { window._nlDef = true; window.newsletterSignup = async function(e) { e.preventDefault(); var em = document.getElementById('newsletter-email').value; var btn = e.target.querySelector('button'); btn.disabled=true; btn.textContent='...'; try { var r = await fetch('/api/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})}); var d = await r.json(); alert(d.success?'Merci ! Vous êtes inscrit à notre newsletter.':d.message||'Erreur. Veuillez réessayer.'); if(d.success) e.target.reset(); } catch(err) { alert('Erreur de connexion.'); } btn.disabled=false; btn.textContent='Sign Up'; }; }
+          if (!window._nlDef) { window._nlDef = true; window.newsletterSignup = async function(e) { e.preventDefault(); var em = document.getElementById('newsletter-email').value; var btn = e.target.querySelector('button'); btn.disabled=true; btn.textContent='...'; try { var r = await fetch(`${CONFIG.API_URL}/newsletter`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})}); var d = await r.json(); alert(d.success?'Merci ! Vous êtes inscrit à notre newsletter.':d.message||'Erreur. Veuillez réessayer.'); if(d.success) e.target.reset(); } catch(err) { alert('Erreur de connexion.'); } btn.disabled=false; btn.textContent='Sign Up'; }; }
           </script>
         </div>
     </section>

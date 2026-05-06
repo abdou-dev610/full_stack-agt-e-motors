@@ -27,6 +27,7 @@
             <li><a  href="index.html">Accueil</a></li>
             <li><a href="shop.html">Produits</a></li>
             <li><a href="blog.html">Services</a></li>
+            <li><a href="reseaux-irve.html">R&#233;seaux IRVE</a></li>
             <li><a href="about.html">À propos</a></li>
             <li><a class="active" href="contact.html">Contact</a></li>
             <li><a href="formation.html">Formations</a></li>
@@ -330,25 +331,63 @@
             </div>
     
             <!-- Formulaire pour les visiteurs -->
-            <div class="visitor-form">
+            <form class="visitor-form" id="visitor-form" onsubmit="submitVisitorForm(event)">
                 <h3>Enregistrez votre visite</h3>
                 <label for="civility">Civilité</label>
                 <select id="civility" name="civility">
                     <option value="M.">M.</option>
                     <option value="Mme">Mme</option>
                 </select>
-    
+
                 <label for="firstname">Nom complet</label>
                 <input type="text" id="firstname" name="firstname" placeholder="Votre Nom complet" required>
-    
+
+                <label for="visitor-email">Email</label>
+                <input type="email" id="visitor-email" name="email" placeholder="Votre adresse email" required>
+
                 <label for="phone">Numéro de téléphone</label>
                 <input type="tel" id="phone" name="phone" placeholder="Votre numéro" required>
-    
+
+                <label for="subject">Sujet</label>
+                <input type="text" id="subject" name="subject" placeholder="Objet de votre visite" required>
+
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Votre message" required></textarea>
-    
-                <button type="submit">Enregistrer</button>
-            </div>
+
+                <button type="submit" id="visitor-submit-btn">Enregistrer</button>
+            </form>
+            <script>
+            window.submitVisitorForm = async function(e) {
+                e.preventDefault();
+                var btn = document.getElementById('visitor-submit-btn');
+                btn.disabled = true;
+                btn.textContent = 'Envoi...';
+                var civility = document.getElementById('civility').value;
+                var firstname = document.getElementById('firstname').value;
+                var payload = {
+                    name: civility + ' ' + firstname,
+                    email: document.getElementById('visitor-email').value,
+                    phone: document.getElementById('phone').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value,
+                    category: 'other'
+                };
+                try {
+                    var r = await fetch(`${CONFIG.API_URL}/contacts`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    var d = await r.json();
+                    alert(d.success ? 'Votre message a bien été envoyé. Nous vous répondrons rapidement.' : (d.message || 'Erreur. Veuillez réessayer.'));
+                    if (d.success) document.getElementById('visitor-form').reset();
+                } catch(err) {
+                    alert('Erreur de connexion. Vérifiez que le serveur est démarré.');
+                }
+                btn.disabled = false;
+                btn.textContent = 'Enregistrer';
+            };
+            </script>
         </div>
         <p>AGT E-Motors ne collectera aucune donnée permettant de vous identifier personnellement, sauf si vous nous les fournissez en remplissant et en soumettant les formulaires disponibles sur notre site Web ou dans une autre section dédiée.
 
@@ -391,7 +430,7 @@
               <button type="submit" class="normal">Sign Up</button>
           </form>
           <script>
-          if (!window._nlDef) { window._nlDef = true; window.newsletterSignup = async function(e) { e.preventDefault(); var em = document.getElementById('newsletter-email').value; var btn = e.target.querySelector('button'); btn.disabled=true; btn.textContent='...'; try { var r = await fetch('/api/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})}); var d = await r.json(); alert(d.success?'Merci ! Vous êtes inscrit à notre newsletter.':d.message||'Erreur. Veuillez réessayer.'); if(d.success) e.target.reset(); } catch(err) { alert('Erreur de connexion.'); } btn.disabled=false; btn.textContent='Sign Up'; }; }
+          if (!window._nlDef) { window._nlDef = true; window.newsletterSignup = async function(e) { e.preventDefault(); var em = document.getElementById('newsletter-email').value; var btn = e.target.querySelector('button'); btn.disabled=true; btn.textContent='...'; try { var r = await fetch(`${CONFIG.API_URL}/newsletter`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em})}); var d = await r.json(); alert(d.success?'Merci ! Vous êtes inscrit à notre newsletter.':d.message||'Erreur. Veuillez réessayer.'); if(d.success) e.target.reset(); } catch(err) { alert('Erreur de connexion.'); } btn.disabled=false; btn.textContent='Sign Up'; }; }
           </script>
         </div>
     </section>

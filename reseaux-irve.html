@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réseaux IRVE-PV 2026–2030 — AGT E MOTORS</title>
+  <meta name="description" content="Plan stratégique IRVE-PV 2026–2030 : 460 stations de recharge solaires dans les 14 régions du Sénégal. AGT E-MOTORS / ANER.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reseaux-irve.css">
+  <script src="js/config.js"></script>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════ -->
+<section id="header">
+  <a href="index.html">
+    <img class="logo" src="images/logo.png" alt="AGT E MOTORS" width="280" height="140">
+  </a>
+  <nav>
+    <ul id="navbar">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="shop.html">Produits</a></li>
+      <li><a href="blog.html">Services</a></li>
+      <li><a class="active" href="reseaux-irve.html">Réseaux IRVE</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="formation.html">Formations</a></li>
+      <li><a href="stories.html">Stories</a></li>
+    </ul>
+  </nav>
+  <style>
+    @media (min-width: 800px) {
+      #navbar { display:flex!important; position:relative!important; flex-direction:row!important; align-items:center!important; justify-content:center!important; right:auto!important; top:auto!important; height:auto!important; width:auto!important; background-color:transparent!important; box-shadow:none!important; padding:0!important; }
+      #menu-container { display:none!important; }
+    }
+    #menu-container { position:relative; display:flex; align-items:center; }
+    #menu-button { background:none; border:none; font-size:24px; cursor:pointer; padding:10px; }
+    #menu-content { position:absolute; top:50px; right:0; background:white; box-shadow:0 4px 6px rgba(0,0,0,.1); border-radius:8px; width:220px; display:none; flex-direction:column; padding:8px; }
+    #menu-content a { text-decoration:none; color:#333; padding:10px; display:block; }
+    .menu-open { display:flex!important; }
+  </style>
+  <div id="menu-container">
+    <button id="menu-button" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button>
+    <nav id="menu-content">
+      <a href="index.html">Accueil</a>
+      <a href="shop.html">Produits</a>
+      <a href="blog.html">Services</a>
+      <a class="active" href="reseaux-irve.html">Réseaux IRVE</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="formation.html">Formations</a>
+      <a href="stories.html">Stories</a>
+    </nav>
+  </div>
+  <script>
+    document.getElementById("menu-button")?.addEventListener("click", function() {
+      document.getElementById("menu-content")?.classList.toggle("menu-open");
+    });
+  </script>
+</section>
+
+<!-- ══ HERO ════════════════════════════════════════════ -->
+<section class="irve-hero">
+  <div class="irve-animate">
+    <div class="irve-hero-badge">
+      <i class="fas fa-bolt"></i>
+      <span>Plan Stratégique</span> 2026 – 2030
+    </div>
+    <h1>Réseaux <em>IRVE-PV</em><br>partout au Sénégal</h1>
+    <p>Infrastructure de Recharge pour Véhicules Électriques couplée au Solaire Photovoltaïque — de Dakar aux 14 régions du Sénégal.</p>
+    <div class="irve-hero-partners">
+      <div class="irve-partner-tag">AGT E-MOTORS</div>
+      <div style="color:rgba(255,255,255,.4); font-size:1.2rem;">×</div>
+      <div class="irve-partner-tag">ANER</div>
+      <div class="irve-partner-tag yellow">Sen E-CHARGE</div>
+    </div>
+    <div class="irve-hero-btns">
+      <a href="#vision" class="irve-btn-primary">
+        <i class="fas fa-play-circle" style="margin-right:8px;"></i>Découvrir le projet
+      </a>
+      <a href="contact.html" class="irve-btn-outline">
+        <i class="fas fa-envelope" style="margin-right:8px;"></i>Nous contacter
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS BAR ════════════════════════════════════════ -->
+<div class="irve-stats-bar">
+  <div class="irve-stats-grid">
+    <div class="irve-stat-item irve-animate">
+      <div class="irve-stat-num">460</div>
+      <div class="irve-stat-label">Stations IRVE</div>
+    </div>
+    <div class="irve-stat-item irve-animate irve-animate-delay-1">
+      <div class="irve-stat-num">55,2 MW</div>
+      <div class="irve-stat-label">PV Solaire Total</div>
+    </div>
+    <div class="irve-stat-item irve-animate irve-animate-delay-2">
+      <div class="irve-stat-num">138 MWh</div>
+      <div class="irve-stat-label">BESS Total</div>
+    </div>
+    <div class="irve-stat-item irve-animate irve-animate-delay-3">
+      <div class="irve-stat-num">1 840</div>
+      <div class="irve-stat-label">Bornes de Charge</div>
+    </div>
+    <div class="irve-stat-item irve-animate irve-animate-delay-4">
+      <div class="irve-stat-num yellow">52,9 Mds</div>
+      <div class="irve-stat-label">FCFA Investissement</div>
+    </div>
+    <div class="irve-stat-item irve-animate irve-animate-delay-4">
+      <div class="irve-stat-num yellow">300</div>
+      <div class="irve-stat-label">FCFA / kWh</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ VISION & CONTEXTE ════════════════════════════════ -->
+<section class="irve-section gray" id="vision">
+  <div class="irve-container">
+    <div class="irve-section-header irve-animate">
+      <div class="irve-section-tag">Vision Stratégique</div>
+      <h2>Vision & Contexte</h2>
+      <p>Un projet d'envergure nationale pour transformer la mobilité au Sénégal.</p>
+    </div>
+    <div class="irve-vision-quote irve-animate">
+      <p>Accélérer la transition vers la mobilité électrique au Sénégal en déployant <strong>460 stations IRVE-PV</strong> inclusives, accessibles et rentables, de <strong>Dakar aux 14 régions</strong>.</p>
+    </div>
+    <div class="irve-cards-3">
+      <div class="irve-card irve-animate">
+        <div class="irve-card-icon"><i class="fas fa-car-side"></i></div>
+        <h3>Mobilité Électrique</h3>
+        <p>Croissance exponentielle des véhicules électriques en Afrique. Le Sénégal se positionne en leader régional avec la Stratégie Nationale de Mobilité Durable.</p>
+      </div>
+      <div class="irve-card yellow-top irve-animate irve-animate-delay-1">
+        <div class="irve-card-icon"><i class="fas fa-sun"></i></div>
+        <h3>Énergie Solaire</h3>
+        <p>Sénégal : 3 000 heures/an d'ensoleillement. Le photovoltaïque permet une production locale, propre et économique pour alimenter toutes les bornes de charge.</p>
+      </div>
+      <div class="irve-card orange-top irve-animate irve-animate-delay-2">
+        <div class="irve-card-icon"><i class="fas fa-users"></i></div>
+        <h3>Impact Social</h3>
+        <p>Chaque station intègre mosquée, salle d'ablutions, toilettes, restaurant et espace internet — un modèle de service public innovant au cœur des communautés.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ANATOMIE D'UNE STATION ═══════════════════════════ -->
+<section class="irve-section dark">
+  <div class="irve-container">
+    <div class="irve-section-header irve-animate">
+      <div class="irve-section-tag">Équipements</div>
+      <h2>Anatomie d'une Station IRVE-PV</h2>
+      <p>Coût unitaire par station : <strong style="color:var(--irve-yellow)">115 millions FCFA</strong></p>
+    </div>
+    <div class="irve-anatomy-grid">
+      <div class="irve-spec-list irve-animate">
+        <div class="irve-spec-item">
+          <div class="irve-spec-icon"><i class="fas fa-solar-panel"></i></div>
+          <div>
+            <div class="irve-spec-label">PV Solaire</div>
+            <div class="irve-spec-value">120 kW</div>
+          </div>
+        </div>
+        <div class="irve-spec-item">
+          <div class="irve-spec-icon"><i class="fas fa-battery-full"></i></div>
+          <div>
+            <div class="irve-spec-label">BESS — Stockage batterie</div>
+            <div class="irve-spec-value">300 kWh</div>
+          </div>
+        </div>
+        <div class="irve-spec-item">
+          <div class="irve-spec-icon"><i class="fas fa-bolt"></i></div>
+          <div>
+            <div class="irve-spec-label">Bornes CC — Charge rapide DC</div>
+            <div class="irve-spec-value">2 × 80 kW</div>
+          </div>
+        </div>
+        <div class="irve-spec-item">
+          <div class="irve-spec-icon"><i class="fas fa-plug"></i></div>
+          <div>
+            <div class="irve-spec-label">Bornes CA — Charge semi-rapide AC</div>
+            <div class="irve-spec-value">2 × 44 kW</div>
+          </div>
+        </div>
+        <div class="irve-tarif-badge">
+          <div class="sub">Tarif de vente d'énergie</div>
+          <div class="big">300 FCFA / kWh</div>
+          <div class="sub">Géré via le logiciel Sen E-CHARGE</div>
+        </div>
+      </div>
+      <div class="irve-services-box irve-animate irve-animate-delay-1">
+        <h3><i class="fas fa-concierge-bell" style="margin-right:8px;"></i>Services Intégrés</h3>
+        <div class="irve-service-item"><i class="fas fa-mosque"></i> Mosquée &amp; espace de prière</div>
+        <div class="irve-service-item"><i class="fas fa-hand-holding-water"></i> Salle d'ablutions</div>
+        <div class="irve-service-item"><i class="fas fa-restroom"></i> Toilettes publiques</div>
+        <div class="irve-service-item"><i class="fas fa-utensils"></i> Restaurant / snack</div>
+        <div class="irve-service-item"><i class="fas fa-wifi"></i> Espace Internet &amp; coworking</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PLAN DE DÉPLOIEMENT ══════════════════════════════ -->
+<section class="irve-section">
+  <div class="irve-container">
+    <div class="irve-section-header irve-animate">
+      <div class="irve-section-tag">Déploiement</div>
+      <h2>Plan de Déploiement 2026 – 2030</h2>
+      <p>Une montée en puissance progressive sur 5 ans pour couvrir tout le territoire national.</p>
+    </div>
+    <div class="irve-timeline" style="background:var(--irve-dark);border-radius:var(--radius);overflow:hidden;">
+      <div class="irve-timeline-item irve-animate">
+        <div class="irve-timeline-year">AN 1 — 2026</div>
+        <div class="irve-timeline-stations">35</div>
+        <div class="irve-timeline-label">stations</div>
+        <div class="irve-timeline-details">
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 4,2 MW PV installé</div>
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 140 bornes</div>
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 4,03 Mds FCFA</div>
+        </div>
+      </div>
+      <div class="irve-timeline-item irve-animate irve-animate-delay-1">
+        <div class="irve-timeline-year">AN 2 — 2027</div>
+        <div class="irve-timeline-stations">75</div>
+        <div class="irve-timeline-label">stations</div>
+        <div class="irve-timeline-details">
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 9 MW PV installé</div>
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 300 bornes</div>
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 8,63 Mds FCFA</div>
+        </div>
+      </div>
+      <div class="irve-timeline-item irve-animate irve-animate-delay-2">
+        <div class="irve-timeline-year">AN 3 — 2028</div>
+        <div class="irve-timeline-stations">150</div>
+        <div class="irve-timeline-label">stations</div>
+        <div class="irve-timeline-details">
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 18 MW PV installé</div>
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 600 bornes</div>
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 17,25 Mds FCFA</div>
+        </div>
+      </div>
+      <div class="irve-timeline-item irve-animate irve-animate-delay-3">
+        <div class="irve-timeline-year">AN 4–5 — 2029–30</div>
+        <div class="irve-timeline-stations">200</div>
+        <div class="irve-timeline-label">stations</div>
+        <div class="irve-timeline-details">
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 24 MW PV installé</div>
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 800 bornes</div>
+          <div class="irve-timeline-detail"><i class="fas fa-circle"></i> 23,0 Mds FCFA</div>
+        </div>
+      </div>
+    </div>
+    <div class="irve-timeline-total irve-animate" style="color:var(--irve-dark);">
+      <strong>TOTAL 2026–2030</strong>
+      <div class="total-nums">
+        <div><div class="tn">460</div><div class="tl">Stations</div></div>
+        <div><div class="tn">55,2 MW</div><div class="tl">PV</div></div>
+        <div><div class="tn">138 MWh</div><div class="tl">BESS</div></div>
+        <div><div class="tn">1 840</div><div class="tl">Bornes</div></div>
+        <div><div class="tn">52,9 Mds</div><div class="tl">FCFA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COUVERTURE NATIONALE ═════════════════════════════ -->
+<section class="irve-section gray">
+  <div class="irve-container">
+    <div class="irve-section-header irve-animate">
+      <div class="irve-section-tag">Couverture Nationale</div>
+      <h2>14 Régions du Sénégal</h2>
+      <p>Environ 33 stations par région pour une couverture équitable et inclusive sur tout le territoire.</p>
+    </div>
+    <div class="irve-regions-grid">
+      <div class="irve-region-card irve-animate"><div class="irve-region-dot"></div><div class="irve-region-name">Dakar</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-1"><div class="irve-region-dot"></div><div class="irve-region-name">Thiès</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-2"><div class="irve-region-dot"></div><div class="irve-region-name">Diourbel</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-3"><div class="irve-region-dot"></div><div class="irve-region-name">Fatick</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate"><div class="irve-region-dot"></div><div class="irve-region-name">Kaolack</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-1"><div class="irve-region-dot"></div><div class="irve-region-name">Kaffrine</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-2"><div class="irve-region-dot"></div><div class="irve-region-name">Ziguinchor</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-3"><div class="irve-region-dot"></div><div class="irve-region-name">Sédhiou</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate"><div class="irve-region-dot"></div><div class="irve-region-name">Kolda</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-1"><div class="irve-region-dot"></div><div class="irve-region-name">Tambacounda</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-2"><div class="irve-region-dot"></div><div class="irve-region-name">Kédougou</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-3"><div class="irve-region-dot"></div><div class="irve-region-name">Saint-Louis</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate"><div class="irve-region-dot"></div><div class="irve-region-name">Louga</div><div class="irve-region-count">~33 stations</div></div>
+      <div class="irve-region-card irve-animate irve-animate-delay-1"><div class="irve-region-dot"></div><div class="irve-region-name">Matam</div><div class="irve-region-count">~33 stations</div></div>
+    </div>
+    <div class="irve-regions-note irve-animate">
+      <i class="fas fa-map-marker-alt"></i>
+      <strong>Sites prioritaires :</strong> axes routiers nationaux, gares, aéroports, marchés régionaux, zones touristiques.
+    </div>
+  </div>
+</section>
+
+<!-- ══ SEN E-CHARGE ═════════════════════════════════════ -->
+<section class="irve-section dark-green">
+  <div class="irve-container">
+    <div class="irve-section-header irve-animate">
+      <div class="irve-section-tag">Logiciel de Gestion</div>
+      <div class="irve-secharge-header">
+        <div class="irve-secharge-badge">Sen E-CHARGE</div>
+        <h2 style="margin:0;">Logiciel de Gestion des IRVE</h2>
+      </div>
+      <p>Supervision centralisée de 460 stations depuis une seule plateforme sénégalaise.</p>
+    </div>
+    <div class="irve-features-grid">
+      <div class="irve-feature-card irve-animate">
+        <div class="irve-feature-icon"><i class="fas fa-satellite-dish"></i></div>
+        <h3>Supervision en temps réel</h3>
+        <p>Monitoring 24h/7j de toutes les bornes, capteurs PV et BESS. Alertes automatiques et diagnostics à distance.</p>
+      </div>
+      <div class="irve-feature-card irve-animate irve-animate-delay-1">
+        <div class="irve-feature-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Gestion des paiements</h3>
+        <p>Facturation à 300 FCFA/kWh. Paiement mobile Wave, Orange Money, carte bancaire, RFID. Génération automatique des tickets.</p>
+      </div>
+      <div class="irve-feature-card irve-animate irve-animate-delay-2">
+        <div class="irve-feature-icon"><i class="fas fa-bolt"></i></div>
+        <h3>Optimisation énergie</h3>
+        <p>Pilotage intelligent de la charge/décharge BESS. Maximisation de l'autoconsommation PV. Réduction des pertes énergétiques.</p>
+      </div>
+      <div class="irve-feature-card irve-animate irve-animate-delay-1">
+        <div class="irve-feature-icon"><i class="fas fa-chart-bar"></i></div>
+        <h3>Tableau de bord analytique</h3>
+        <p>KPIs en temps réel : énergie produite, vendue, revenus, taux d'utilisation des bornes. Rapports automatiques périodiques.</p>
+      </div>
+      <div class="irve-feature-card irve-animate irve-animate-delay-2">
+        <div class="irve-feature-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>Gestion multi-sites</h3>
+        <p>Supervision centralisée de 460 stations depuis une seule plateforme. Profils utilisateurs et rôles par région.</p>
+      </div>
+      <div class="irve-feature-card irve-animate irve-animate-delay-3">
+        <div class="irve-feature-icon"><i class="fas fa-brain"></i></div>
+        <h3>Maintenance prédictive</h3>
+        <p>IA d'anticipation des pannes. Historique complet des interventions. Dispatching automatique des techniciens par région.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPACT & APPEL À L'ACTION ════════════════════════ -->
+<section class="irve-section">
+  <div class="irve-container">
+    <div class="irve-section-header irve-animate">
+      <div class="irve-section-tag">Impact &amp; Partenariat</div>
+      <h2>Impact &amp; Appel à l'Action</h2>
+      <p>Un projet qui transforme l'économie, l'environnement et la société sénégalaise.</p>
+    </div>
+    <div class="irve-impact-grid">
+      <div class="irve-impact-items">
+        <div class="irve-impact-item irve-animate">
+          <div class="irve-impact-item-icon" style="background:#e8f5e9;color:#2d8653;"><i class="fas fa-leaf"></i></div>
+          <div>
+            <h4>Environnement</h4>
+            <p>55,2 MW de solaire = réduction massive des émissions CO₂. Énergie propre et locale pour une mobilité durable.</p>
+          </div>
+        </div>
+        <div class="irve-impact-item irve-animate irve-animate-delay-1">
+          <div class="irve-impact-item-icon" style="background:#fff8e1;color:#e07b1a;"><i class="fas fa-briefcase"></i></div>
+          <div>
+            <h4>Emploi</h4>
+            <p>Création de milliers d'emplois directs et indirects dans les 14 régions du Sénégal.</p>
+          </div>
+        </div>
+        <div class="irve-impact-item irve-animate irve-animate-delay-2">
+          <div class="irve-impact-item-icon" style="background:#e3f2fd;color:#1976d2;"><i class="fas fa-hands-helping"></i></div>
+          <div>
+            <h4>Inclusion sociale</h4>
+            <p>Services publics (mosquée, internet, toilettes) dans des zones peu desservies. Un modèle innovant de développement territorial.</p>
+          </div>
+        </div>
+        <div class="irve-impact-item irve-animate irve-animate-delay-3">
+          <div class="irve-impact-item-icon" style="background:#f3e5f5;color:#7b1fa2;"><i class="fas fa-flag"></i></div>
+          <div>
+            <h4>Souveraineté</h4>
+            <p>Énergie locale, nationale, pilotée par un logiciel sénégalais : <strong>Sen E-CHARGE</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="irve-cta-box irve-animate irve-animate-delay-1">
+        <h3>Rejoignez le Mouvement</h3>
+        <p class="sub">Investisseurs, institutions, partenaires — contribuez à l'avenir énergétique du Sénégal</p>
+        <div class="irve-cta-list">
+          <div class="irve-cta-item highlight">Investisseurs &amp; Banques</div>
+          <div class="irve-cta-item">Collectivités locales</div>
+          <div class="irve-cta-item">État du Sénégal / ANER</div>
+          <div class="irve-cta-item">Partenaires techniques</div>
+          <div class="irve-cta-item">ONG &amp; Bailleurs de fonds</div>
+        </div>
+        <div style="margin-top:24px; text-align:center;">
+          <a href="contact.html" class="irve-btn-primary" style="display:inline-block;">
+            <i class="fas fa-handshake" style="margin-right:8px;"></i>Nous contacter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWSLETTER ═══════════════════════════════════════ -->
+<section id="newsletter" class="section-p1 section-m1">
+  <div class="newstext">
+    <h4>Inscrivez-vous à notre newsletter</h4>
+    <p>Recevez des mises à jour par e-mail sur nos <span>offres spéciales AGT E MOTORS.</span></p>
+  </div>
+  <div class="form">
+    <form onsubmit="newsletterSignup(event)" style="display:flex;gap:10px;">
+      <input type="email" id="newsletter-email" placeholder="Votre adresse e-mail" required style="flex:1;">
+      <button type="submit" class="normal">Sign Up</button>
+    </form>
+    <script>
+      if (!window._nlDef) {
+        window._nlDef = true;
+        window.newsletterSignup = async function(e) {
+          e.preventDefault();
+          var em = document.getElementById('newsletter-email').value;
+          var btn = e.target.querySelector('button');
+          btn.disabled = true; btn.textContent = '...';
+          try {
+            var r = await fetch(`${CONFIG.API_URL}/newsletter`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email:em}) });
+            var d = await r.json();
+            alert(d.success ? 'Merci ! Vous êtes inscrit à notre newsletter.' : d.message || 'Erreur. Veuillez réessayer.');
+            if (d.success) e.target.reset();
+          } catch(err) { alert('Erreur de connexion.'); }
+          btn.disabled = false; btn.textContent = 'Sign Up';
+        };
+      }
+    </script>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer class="section-p1">
+  <div class="col">
+    <img class="logo" src="images/logo.png" alt="AGT E MOTORS" width="140" height="70">
+    <h4>Contact</h4>
+    <p><strong>Adresse:</strong> 85 Cité Batrain Ouakam Dakar Sénégal</p>
+    <p><strong>Numéros:</strong> (+221) 78 683 22 94 / 33 910 02 70 / 77 215 99 64 (WhatsApp)</p>
+    <p><strong>Heures de travail:</strong> 8h:00 - 17h:00, Lun - Sam</p>
+    <p><strong>À Touba:</strong> Fermé le Vendredi, Samedi 8h - 12h</p>
+    <div class="follow">
+      <h4>Nous suivre</h4>
+      <div class="icon">
+        <a href="https://www.facebook.com/share/186LwGu3Wf/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/agt-e-motors/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtu.be/EaOlj_1uyvQ?feature=shared" target="_blank"><i class="fab fa-youtube-square"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <h4>À propos de nous</h4>
+    <a href="about.html">Qui Sommes-Nous?</a>
+    <a href="poli.html">Politique de Confidentialité</a>
+    <a href="contact.html">Nous Contacter</a>
+  </div>
+  <div class="copyright">
+    <p>Créé par AGT E MOTORS | Tous droits réservés | &#169; 2026</p>
+  </div>
+</footer>
+
+<!-- ══ WHATSAPP ══════════════════════════════════════════ -->
+<a href="#" onclick="var msg='Bonjour AGT E MOTORS ! 👋\n\nJe souhaite obtenir des informations sur le projet IRVE-PV 2026–2030.';window.open('https://wa.me/221772159964?text='+encodeURIComponent(msg),'_blank');return false;" target="_blank" rel="noopener noreferrer" id="whatsapp-widget" title="Contactez-nous sur WhatsApp" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="32" height="32" fill="white"><path d="M24 4C13 4 4 13 4 24c0 3.6 1 7 2.7 10L4 44l10.3-2.7C17.1 43 20.5 44 24 44c11 0 20-9 20-20S35 4 24 4zm0 36c-3.1 0-6.1-.8-8.7-2.4l-.6-.4-6.1 1.6 1.6-5.9-.4-.6C8.8 30.1 8 27.1 8 24c0-8.8 7.2-16 16-16s16 7.2 16 16-7.2 16-16 16zm8.7-11.8c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.5-1.1 1.5-1.4 1.8-.3.3-.5.4-1 .1-.5-.2-2-.7-3.8-2.3-1.4-1.2-2.3-2.8-2.6-3.2-.3-.5 0-.7.2-1 .2-.2.5-.5.7-.8.2-.2.3-.5.4-.8.1-.3 0-.6-.1-.8-.1-.2-1-2.5-1.4-3.4-.4-.9-.8-.8-1-.8h-.9c-.3 0-.8.1-1.2.6-.4.5-1.6 1.5-1.6 3.7s1.6 4.3 1.9 4.6c.2.3 3.1 4.8 7.6 6.7 4.4 1.9 4.4 1.3 5.2 1.2.8-.1 2.8-1.1 3.2-2.2.4-1.1.4-2 .3-2.2-.2-.2-.5-.3-1-.5z"/></svg>
+</a>
+<style>
+#whatsapp-widget { position:fixed; bottom:24px; right:24px; z-index:9999; background-color:#25D366; border-radius:50%; width:58px; height:58px; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,.3); transition:transform .2s,box-shadow .2s; text-decoration:none; }
+#whatsapp-widget:hover { transform:scale(1.1); box-shadow:0 6px 18px rgba(0,0,0,.4); }
+</style>
+
+<!-- ══ SCRIPT ANIMATIONS ═════════════════════════════════ -->
+<script src="script.js"></script>
+<script>
+  (function() {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.irve-animate').forEach(function(el) { obs.observe(el); });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
 const CONFIG = {
   BACKEND_URL: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
     ? 'http://localhost:5000'
-    : 'https://backend-agt-e-motors.onrender.com',
+    : 'https://api.agtemotors.com',
   API_URL: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
     ? 'http://localhost:5000/api'
-    : 'https://backend-agt-e-motors.onrender.com/api'
+    : 'https://api.agtemotors.com/api'
 };
