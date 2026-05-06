@@ -38,6 +38,7 @@ if (process.env.FRONTEND_URL) {
 
 const corsOptions = {
     origin: (origin, callback) => {
+        // Autorise les requêtes sans origin (Postman, curl, server-to-server)
         if (!origin) return callback(null, true);
         const allowed = allowedOrigins.some(o =>
             o instanceof RegExp ? o.test(origin) : o === origin
@@ -45,8 +46,8 @@ const corsOptions = {
         if (allowed) {
             callback(null, true);
         } else {
-            console.warn(`CORS blocked: ${origin}`);
-            callback(new Error(`CORS policy: origin ${origin} not allowed`));
+            console.warn(`[CORS] Bloqué: ${origin}`);
+            callback(new Error(`CORS: origine non autorisée: ${origin}`));
         }
     },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -62,11 +63,13 @@ app.options('*', cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
+// Logger de requêtes
 app.use((req, res, next) => {
-    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path} — origin: ${req.headers.origin || 'direct'}`);
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} — origin: ${req.headers.origin || 'direct'}`);
     next();
 });
 
+// Routes API
 app.use('/api/health', healthRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
@@ -75,28 +78,43 @@ app.use('/api/quotes', quoteRoutes);
 app.use('/api/devis', devisRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 
+// Route racine
 app.get('/', (req, res) => {
     res.json({
         success: true,
         message: 'AGT E Motors API',
         version: '1.0.0',
-        endpoints: [
+        environment: process.env.NODE_ENV || 'development',
+        routes: [
             'GET  /api/health',
-            'GET  /api/products',
-            'POST /api/products',
-            'GET  /api/orders',
-            'POST /api/orders',
-            'GET  /api/contacts',
-            'POST /api/contacts',
-            'GET  /api/quotes',
-            'POST /api/quotes',
             'POST /api/newsletter',
+            'GET  /api/newsletter',
+            'POST /api/devis',
+            'POST /api/contacts',
+            'POST /api/quotes',
+            'GET  /api/products',
+            'GET  /api/orders',
         ],
     });
 });
 
+// Handler 404 — route introuvable
 app.use((req, res) => {
-    res.status(404).json({ success: false, message: `Route ${req.method} ${req.path} not found` });
+    console.warn(`[404] Route non trouvée: ${req.method} ${req.originalUrl}`);
+    res.status(404).json({
+        success: false,
+        message: `Route non trouvée : ${req.method} ${req.originalUrl}`,
+    });
+});
+
+// Handler d'erreur global
+app.use((err, req, res, next) => {
+    console.error(`[500] Erreur serveur sur ${req.method} ${req.originalUrl}:`, err.message);
+    res.status(err.status || 500).json({
+        success: false,
+        message: 'Erreur interne du serveur',
+        ...(process.env.NODE_ENV !== 'production' && { error: err.message }),
+    });
 });
 
 app.use(errorHandler);
@@ -104,21 +122,19 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    const frontendUrl = process.env.FRONTEND_URL || 'non configuré';
     console.log(`
-    ╔══════════════════════════════════════════════╗
-    ║       AGT E Motors API Server Started        ║
-    ╚══════════════════════════════════════════════╝
+╔══════════════════════════════════════════════╗
+║       AGT E Motors API Server Started        ║
+╚══════════════════════════════════════════════╝
+  Port      : ${PORT}
+  Env       : ${process.env.NODE_ENV || 'development'}
+  Frontend  : ${process.env.FRONTEND_URL || 'non configuré'}
 
-    Server    : http://localhost:${PORT}
-    Env       : ${process.env.NODE_ENV || 'development'}
-    Frontend  : ${frontendUrl}
-    CORS dev  : http://127.0.0.1:5501, http://localhost:5501
-
-    Routes actives:
-    - GET  /api/health
-    - POST /api/newsletter
-    - POST /api/contacts
-    - POST /api/quotes
+  Routes actives:
+  - GET  /api/health
+  - POST /api/newsletter
+  - POST /api/devis
+  - POST /api/contacts
+  - POST /api/quotes
     `);
 });

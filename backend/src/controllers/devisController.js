@@ -17,6 +17,8 @@ exports.soumettreDevis = async (req, res) => {
     try {
         const { nomComplet, email, telephone, adresse, serviceType, type, message } = req.body;
 
+        console.log('[/api/devis] body reçu:', { nomComplet, email, telephone, adresse, serviceType, type });
+
         if (!nomComplet || !email || !telephone || !adresse || !serviceType || !type || !message) {
             return res.status(400).json({ success: false, message: 'Tous les champs sont obligatoires.' });
         }
@@ -35,52 +37,65 @@ exports.soumettreDevis = async (req, res) => {
         });
 
         await quote.save();
+        console.log('[/api/devis] devis sauvegardé:', quoteNumber);
 
-        // Email à l'admin
-        await transporter.sendMail({
-            from: process.env.EMAIL_FROM,
-            to: process.env.ADMIN_EMAIL,
-            subject: `📋 Nouvelle demande de devis - ${quote.quoteNumber}`,
-            html: `
-                <h2 style="color:#2d6a4f;">Nouvelle Demande de Devis - AGT E MOTORS</h2>
-                <hr>
-                <h3>Informations Client</h3>
-                <p><strong>Nom :</strong> ${nomComplet}</p>
-                <p><strong>Email :</strong> ${email}</p>
-                <p><strong>Téléphone :</strong> ${telephone}</p>
-                <p><strong>Adresse :</strong> ${adresse}</p>
-                <hr>
-                <h3>Détails de la Demande</h3>
-                <p><strong>N° Devis :</strong> ${quote.quoteNumber}</p>
-                <p><strong>Service/Produit :</strong> ${serviceType}</p>
-                <p><strong>Type :</strong> ${type}</p>
-                <p><strong>Message :</strong></p>
-                <p style="background:#f4f4f4;padding:10px;border-radius:5px;">${message.replace(/\n/g, '<br>')}</p>
-                <hr>
-                <p style="color:#888;font-size:12px;">Reçu le ${new Date().toLocaleString('fr-FR')}</p>
-            `,
-        });
+        // Email admin — fire-and-forget, ne bloque pas la réponse
+        if (process.env.EMAIL_FROM && process.env.ADMIN_EMAIL) {
+            transporter.sendMail({
+                from: process.env.EMAIL_FROM,
+                to: process.env.ADMIN_EMAIL,
+                subject: `📋 Nouvelle demande de devis - ${quoteNumber}`,
+                html: `
+                    <h2 style="color:#2d6a4f;">Nouvelle Demande de Devis - AGT E MOTORS</h2>
+                    <hr>
+                    <h3>Informations Client</h3>
+                    <p><strong>Nom :</strong> ${nomComplet}</p>
+                    <p><strong>Email :</strong> ${email}</p>
+                    <p><strong>Téléphone :</strong> ${telephone}</p>
+                    <p><strong>Adresse :</strong> ${adresse}</p>
+                    <hr>
+                    <h3>Détails de la Demande</h3>
+                    <p><strong>N° Devis :</strong> ${quoteNumber}</p>
+                    <p><strong>Service/Produit :</strong> ${serviceType}</p>
+                    <p><strong>Type :</strong> ${type}</p>
+                    <p><strong>Message :</strong></p>
+                    <p style="background:#f4f4f4;padding:10px;border-radius:5px;">${message.replace(/\n/g, '<br>')}</p>
+                    <hr>
+                    <p style="color:#888;font-size:12px;">Reçu le ${new Date().toLocaleString('fr-FR')}</p>
+                `,
+            }).catch(err => console.error('[/api/devis] Email admin erreur:', err.message));
+        } else {
+            console.warn('[/api/devis] EMAIL_FROM ou ADMIN_EMAIL non configuré — email admin non envoyé');
+        }
 
-        // Email de confirmation au client
-        try {
-            await transporter.sendMail({
+        // Email de confirmation client — fire-and-forget
+        if (process.env.EMAIL_FROM) {
+            transporter.sendMail({
                 from: process.env.EMAIL_FROM,
                 to: email,
                 subject: `✅ Votre demande de devis a bien été reçue - AGT E MOTORS`,
                 html: `
                     <h2 style="color:#2d6a4f;">Demande de Devis Confirmée</h2>
                     <p>Bonjour <strong>${nomComplet}</strong>,</p>
-                    <p>Nous avons bien reçu votre demande de devis (N° <strong>${quote.quoteNumber}</strong>).</p>
+                    <p>Nous avons bien reçu votre demande de devis (N° <strong>${quoteNumber}</strong>).</p>
                     <p>Notre équipe vous contactera très prochainement.</p>
                     <br>
                     <p>Cordialement,<br><strong>AGT E MOTORS</strong></p>
                 `,
-            });
-        } catch (_) {}
+            }).catch(err => console.error('[/api/devis] Email client erreur:', err.message));
+        }
 
-        res.status(201).json({ success: true, message: 'Demande de devis envoyée avec succès !', quoteNumber: quote.quoteNumber });
+        res.status(201).json({
+            success: true,
+            message: 'Votre demande de devis a été envoyée avec succès',
+            quoteNumber,
+        });
+
     } catch (error) {
-        console.error('Erreur devis:', error.message);
-        res.status(500).json({ success: false, message: 'Erreur serveur. Veuillez réessayer.' });
+        console.error('[/api/devis] Erreur serveur:', error.message);
+        res.status(500).json({
+            success: false,
+            message: 'Impossible d\'envoyer la demande de devis pour le moment',
+        });
     }
 };
