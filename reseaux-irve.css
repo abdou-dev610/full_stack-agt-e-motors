@@ -308,15 +308,36 @@
 .irve-cta-item.highlight { background: var(--irve-yellow); color: var(--irve-dark); border-color: var(--irve-yellow); font-weight: 700; }
 
 /* ── ANIMATIONS SCROLL ───────────────────────────────── */
+/* Fallback : toujours visible sans JS */
 .irve-animate {
-  opacity: 0; transform: translateY(30px);
-  transition: opacity .6s ease, transform .6s ease;
+  opacity: 1;
+  transform: none;
 }
-.irve-animate.visible { opacity: 1; transform: translateY(0); }
-.irve-animate-delay-1 { transition-delay: .1s; }
-.irve-animate-delay-2 { transition-delay: .2s; }
-.irve-animate-delay-3 { transition-delay: .3s; }
-.irve-animate-delay-4 { transition-delay: .4s; }
+
+/* Animation activée uniquement quand JS a chargé (.js-irve sur <html>) */
+.js-irve .irve-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.js-irve .irve-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.js-irve .irve-animate-delay-1 { transition-delay: .08s; }
+.js-irve .irve-animate-delay-2 { transition-delay: .16s; }
+.js-irve .irve-animate-delay-3 { transition-delay: .24s; }
+.js-irve .irve-animate-delay-4 { transition-delay: .32s; }
+
+/* Sur mobile : pas d'animation — on affiche tout directement */
+@media (max-width: 768px) {
+  .js-irve .irve-animate,
+  .js-irve .irve-animate.visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
 
 /* ── RESPONSIVE ──────────────────────────────────────── */
 @media (max-width: 768px) {

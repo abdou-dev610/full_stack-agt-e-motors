@@ -478,6 +478,20 @@
 <script src="script.js"></script>
 <script>
   (function() {
+    // Sur mobile : pas d'animation, tout est visible via CSS
+    if (window.innerWidth <= 768) return;
+
+    // Active les animations scroll uniquement sur desktop/tablette large
+    document.documentElement.classList.add('js-irve');
+
+    if (!('IntersectionObserver' in window)) {
+      // Fallback navigateurs anciens : tout rendre visible immédiatement
+      document.querySelectorAll('.irve-animate').forEach(function(el) {
+        el.classList.add('visible');
+      });
+      return;
+    }
+
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -485,8 +499,14 @@
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.irve-animate').forEach(function(el) { obs.observe(el); });
+    }, {
+      threshold: 0,           // déclenche dès qu'un pixel entre dans le viewport
+      rootMargin: '0px 0px -40px 0px'  // légèrement avant le bas du viewport
+    });
+
+    document.querySelectorAll('.irve-animate').forEach(function(el) {
+      obs.observe(el);
+    });
   })();
 </script>
 
