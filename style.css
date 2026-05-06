@@ -2420,3 +2420,294 @@ button span, .devis-btn span, .download-pdf span {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+/* ============================================================
+   RESPONSIVE GLOBAL — CONSOLIDATION FINALE
+   Breakpoints : 1024px | 768px | 480px | 360px
+   ============================================================ */
+
+/* --- Logo responsive --- */
+.logo {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .logo { max-width: 160px; }
+}
+
+@media (max-width: 480px) {
+    .logo { max-width: 130px; }
+}
+
+/* --- Grille produits/services : 250px → 150px sur petit mobile --- */
+@media (max-width: 480px) {
+    .grid-container,
+    .product-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .section-title {
+        font-size: 1.6rem !important;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* --- Produits-services section --- */
+@media (max-width: 768px) {
+    .produits-services {
+        padding: 32px 16px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 24px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 14px;
+    }
+}
+
+/* --- Contact form : stack sur mobile --- */
+@media (max-width: 768px) {
+    #contact-details {
+        flex-direction: column !important;
+    }
+
+    #contact-details .details,
+    #contact-details .map {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    #form-details {
+        padding: 24px 16px !important;
+        margin: 8px !important;
+        flex-wrap: wrap;
+    }
+
+    #form-details form {
+        width: 100% !important;
+        margin-bottom: 24px;
+    }
+
+    #form-details .people {
+        width: 100% !important;
+        flex-direction: column;
+    }
+
+    #form-details .people input {
+        width: 100% !important;
+    }
+}
+
+/* --- Newsletter : stack input + bouton --- */
+@media (max-width: 768px) {
+    #newsletter {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 16px;
+        padding: 32px 16px;
+    }
+
+    #newsletter .newstext {
+        max-width: 100%;
+    }
+
+    #newsletter .form {
+        width: 100% !important;
+    }
+
+    #newsletter .form form {
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    #newsletter .form input[type="email"] {
+        width: 100% !important;
+        border-radius: 6px !important;
+    }
+
+    #newsletter .form button {
+        width: 100% !important;
+        border-radius: 6px !important;
+    }
+}
+
+/* --- Hero --- */
+@media (max-width: 768px) {
+    #hero {
+        padding: 0 16px !important;
+        height: auto !important;
+        min-height: 50vh;
+        background-position: center !important;
+    }
+
+    #hero h4 { font-size: 14px; }
+    #hero h1 { font-size: clamp(1.4rem, 5vw, 2.2rem); }
+}
+
+@media (max-width: 480px) {
+    #hero {
+        min-height: 40vh;
+        padding: 0 12px !important;
+    }
+}
+
+/* --- Banner3 padding --- */
+@media (max-width: 768px) {
+    #banner3 { padding: 0 16px !important; }
+    #banner3 .banner-box { width: 100% !important; margin-bottom: 16px; }
+}
+
+/* --- Footer : stack colonnes --- */
+@media (max-width: 768px) {
+    footer.section-p1 {
+        flex-direction: column !important;
+        gap: 28px;
+        padding: 32px 20px !important;
+    }
+
+    footer .col {
+        width: 100% !important;
+    }
+
+    footer .copyright {
+        text-align: center;
+        width: 100%;
+        padding-top: 16px;
+        border-top: 1px solid #eee;
+    }
+}
+
+/* --- Sections padding globaux sur mobile --- */
+@media (max-width: 768px) {
+    .section-p1 { padding: 24px 16px !important; }
+    .section-m1 { margin: 16px 0 !important; }
+}
+
+@media (max-width: 480px) {
+    .section-p1 { padding: 16px 12px !important; }
+
+    h1 { font-size: clamp(1.5rem, 6vw, 2.2rem); }
+    h2 { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+    h3 { font-size: clamp(1.1rem, 4vw, 1.4rem); }
+}
+
+/* --- Single product page --- */
+@media (max-width: 768px) {
+    #productdetails {
+        flex-direction: column !important;
+    }
+
+    #productdetails .single-pro-image,
+    #productdetails .single-pro-details {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* --- Blog page --- */
+@media (max-width: 768px) {
+    #blog {
+        padding: 40px 16px !important;
+    }
+
+    #blog .blog-box {
+        flex-direction: column !important;
+    }
+
+    #blog .blog-img {
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 20px;
+    }
+
+    #blog .blog-details {
+        width: 100% !important;
+    }
+}
+
+/* --- Vidéos section --- */
+@media (max-width: 768px) {
+    .video-wrapper {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+    }
+
+    .video-container {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        padding-bottom: 56.25% !important;
+    }
+}
+
+/* --- About page --- */
+@media (max-width: 768px) {
+    #about-head {
+        flex-direction: column !important;
+    }
+
+    #about-head img {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+
+    #about-head div {
+        padding-left: 0 !important;
+    }
+}
+
+/* --- Cart table sur petit mobile --- */
+@media (max-width: 480px) {
+    #cart {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* --- Sen E-CHARGE section sur mobile (renforts) --- */
+@media (max-width: 480px) {
+    #sen-echarge-section {
+        padding: 32px 16px !important;
+    }
+}
+
+/* --- Devis / form.html --- */
+@media (max-width: 480px) {
+    .quokka-zebra-section {
+        padding: 24px 12px !important;
+    }
+
+    .flamingo-pineapple-container {
+        padding: 20px 14px !important;
+        border-radius: 8px;
+    }
+
+    .narwhal-mango-title {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* --- Overflow horizontal global (sécurité) --- */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* --- Images fluides (rappel global sécurisé) --- */
+img, video, iframe, picture {
+    max-width: 100%;
+    height: auto;
+}

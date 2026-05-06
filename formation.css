@@ -1,103 +1,175 @@
-/* Section principale */
+/* =============================
+   FORMATION PAGE — BASE STYLES
+   ============================= */
+
 .training-section {
-    padding: 50px 35px; /* Padding réduit */
+    padding: 60px 40px;
     background-color: #f7f7f7;
     font-family: 'Arial', sans-serif;
-  }
-  
-  /* Conteneur principal */
-  .training-container {
+}
+
+.training-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px; /* Espacement réduit entre colonnes */
+    gap: 40px;
     justify-content: space-between;
     align-items: flex-start;
-  }
-  
-  /* Colonne de gauche */
-  .left-column {
-    width: 100%;
-    max-width: 58%;
-    margin-bottom: 20px;
-  }
-  
-  .left-column h2 {
-    font-size: 36px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Colonne de gauche */
+.left-column {
+    flex: 1 1 55%;
+    min-width: 0;
+}
+
+.left-column h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
     color: #222;
     font-weight: bold;
-    margin-bottom: 18px; /* Espacement réduit sous le titre */
-  }
-  
-  .left-column p {
-    font-size: 20px;
-    line-height: 1.5; /* Espacement des lignes réduit */
+    margin-bottom: 18px;
+}
+
+.left-column p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.65;
     color: #333;
-    margin-bottom: 25px; /* Marges réduites entre les paragraphes */
-  }
-  
-  .left-column ul {
+    margin-bottom: 20px;
+}
+
+.left-column ul {
     list-style-type: disc;
-    padding-left: 30px;
-    margin-bottom: 25px;
-  }
-  
-  .left-column li {
-    font-size: 20px;
+    padding-left: 28px;
+    margin-bottom: 20px;
+}
+
+.left-column li {
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: #444;
-    margin-bottom: 12px;
-  }
-  
-  /* Colonne de droite */
-  .right-column {
-    width: 100%;
-    max-width: 38%;
+    margin-bottom: 10px;
+}
+
+/* Colonne de droite */
+.right-column {
+    flex: 1 1 35%;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Espacement réduit entre les vidéos */
-  }
-  
-  .right-column img,
-  .right-column video {
+    gap: 20px;
+}
+
+.right-column img,
+.right-column video {
     width: 100%;
+    height: auto;
     border-radius: 12px;
     object-fit: cover;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s, box-shadow 0.3s;
-    margin-bottom: 25px; /* Espacement réduit sous chaque média */
-  }
-  
-  /* Animation au survol */
-  .right-column img:hover,
-  .right-column video:hover {
+    display: block;
+}
+
+.right-column img:hover,
+.right-column video:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Amélioration des vidéos */
-  .right-column video {
-    height: 400px;
+}
+
+.right-column video {
+    height: auto;
+    max-height: 320px;
     background-color: #000;
-  }
-  
-  /* Bouton Call-to-Action */
-  .cta-button {
-    display: inline-block;
-    padding: 10px 22px;
-    font-size: 20px;
+}
+
+/* Bouton CTA */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: bold;
     color: #fff;
     background-color: #008cba;
     border: none;
     border-radius: 10px;
-    text-align: center;
     text-decoration: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transition: background-color 0.3s, box-shadow 0.3s;
-    margin-top: 30px; /* Espacement réduit sous le texte */
-  }
-  
-  .cta-button:hover {
+    margin-top: 24px;
+    white-space: normal;
+    word-break: normal;
+}
+
+.cta-button:hover {
     background-color: #0074a0;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
+}
+
+/* =============================
+   TABLETTE — 768px
+   ============================= */
+@media (max-width: 768px) {
+    .training-section {
+        padding: 40px 24px;
+    }
+
+    .training-container {
+        gap: 28px;
+    }
+
+    .left-column {
+        flex: 1 1 100%;
+    }
+
+    .right-column {
+        flex: 1 1 100%;
+        gap: 16px;
+    }
+
+    .right-column video {
+        max-height: 260px;
+    }
+}
+
+/* =============================
+   MOBILE — 480px
+   ============================= */
+@media (max-width: 480px) {
+    .training-section {
+        padding: 28px 16px;
+    }
+
+    .training-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .left-column h2 {
+        font-size: 1.4rem;
+    }
+
+    .left-column p,
+    .left-column li {
+        font-size: 1rem;
+    }
+
+    .right-column video {
+        max-height: 200px;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 12px 16px;
+    }
+}
