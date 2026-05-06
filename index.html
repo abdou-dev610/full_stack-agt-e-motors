@@ -218,6 +218,206 @@
         };
     </script>
 
+<!-- Section Sen E-CHARGE -->
+<section id="sen-echarge-section">
+  <div class="sec-container">
+    <div class="sec-logo-wrap">
+      <a href="https://sene-charge-lite.web.app/login" target="_blank" rel="noopener noreferrer" class="sec-logo-link">
+        <img src="images/sen-echarge-logo.jpeg" alt="Sen E-CHARGE Logo" class="sec-logo">
+      </a>
+    </div>
+    <div class="sec-content">
+      <div class="sec-badge">Plateforme Officielle</div>
+      <h2 class="sec-title">Sen E-CHARGE</h2>
+      <p class="sec-subtitle">La plateforme de gestion intelligente des réseaux IRVE au Sénégal</p>
+      <p class="sec-desc">
+        Superviser, contrôler et optimiser vos bornes de recharge en temps réel.
+        Sen E-CHARGE offre une solution complète pour les opérateurs de mobilité électrique :
+        monitoring des sessions, gestion des utilisateurs, facturation automatisée et tableaux de bord analytiques.
+      </p>
+      <a href="https://sene-charge-lite.web.app/login" target="_blank" rel="noopener noreferrer" class="sec-cta">
+        Accéder à la plateforme <span class="sec-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+#sen-echarge-section {
+  background: linear-gradient(135deg, #0a2e1e 0%, #0f3d2e 50%, #1a4d3a 100%);
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+#sen-echarge-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(46,204,113,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#sen-echarge-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(243,156,18,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sec-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  animation: secFadeIn 0.9s ease both;
+}
+
+@keyframes secFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sec-logo-wrap {
+  flex-shrink: 0;
+}
+
+.sec-logo-link {
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 2px rgba(46,204,113,0.2);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.sec-logo-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 3px rgba(46,204,113,0.5);
+}
+
+.sec-logo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.sec-content {
+  flex: 1;
+}
+
+.sec-badge {
+  display: inline-block;
+  background: rgba(243,156,18,0.15);
+  color: #f39c12;
+  border: 1px solid rgba(243,156,18,0.3);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.sec-title {
+  color: #ffffff;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0 0 8px;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.sec-title span {
+  color: #2ecc71;
+}
+
+.sec-subtitle {
+  color: #2ecc71;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  opacity: 0.95;
+}
+
+.sec-desc {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.97rem;
+  line-height: 1.75;
+  margin: 0 0 28px;
+  max-width: 540px;
+}
+
+.sec-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(46,204,113,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+.sec-cta:hover {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(46,204,113,0.5);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.sec-arrow {
+  font-size: 1.15rem;
+  transition: transform 0.25s ease;
+}
+
+.sec-cta:hover .sec-arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  #sen-echarge-section {
+    padding: 44px 20px;
+  }
+  .sec-container {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+  .sec-logo {
+    width: 160px;
+    height: 160px;
+  }
+  .sec-title {
+    font-size: 2rem;
+  }
+  .sec-desc {
+    max-width: 100%;
+  }
+  .sec-badge {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 14px;
+  }
+}
+</style>
+<!-- End Sen E-CHARGE Section -->
+
 <!--
     <section id="feature" class="section-p1">
         <div class="fe-box">
