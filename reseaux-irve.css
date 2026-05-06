@@ -49,7 +49,7 @@
 .irve-hero p {
   font-size: clamp(.95rem, 2vw, 1.15rem);
   max-width: 680px; margin: 0 auto 32px;
-  opacity: .88; line-height: 1.7;
+  color: #ffffff; opacity: 1; line-height: 1.7;
 }
 .irve-hero-partners {
   display: flex; align-items: center; justify-content: center;
@@ -137,7 +137,8 @@
   text-align: center; position: relative;
 }
 .irve-vision-quote::before { content: '«'; font-size: 5rem; color: rgba(255,255,255,.15); position: absolute; top: -10px; left: 24px; font-family: Georgia, serif; }
-.irve-vision-quote p { font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.7; font-weight: 500; position: relative; }
+.irve-vision-quote p { font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.7; font-weight: 500; position: relative; color: #ffffff !important; }
+.irve-vision-quote strong { color: #ffffff; }
 .irve-cards-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
 .irve-card {
   background: var(--irve-white); border-radius: var(--radius);
@@ -209,11 +210,11 @@
   font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 900;
   color: var(--irve-yellow); line-height: 1;
 }
-.irve-timeline-label { font-size: .8rem; opacity: .7; margin-bottom: 18px; }
+.irve-timeline-label { font-size: .8rem; color: #ffffff; opacity: 1; margin-bottom: 18px; }
 .irve-timeline-details { display: flex; flex-direction: column; gap: 6px; }
 .irve-timeline-detail {
   display: flex; align-items: center; gap: 8px;
-  font-size: .82rem; opacity: .85;
+  font-size: .82rem; color: #ffffff; opacity: 1;
 }
 .irve-timeline-detail i { color: var(--irve-light); font-size: .75rem; }
 .irve-timeline-total {
