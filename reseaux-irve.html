@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -424,7 +424,7 @@
           var btn = e.target.querySelector('button');
           btn.disabled = true; btn.textContent = '...';
           try {
-            var r = await fetch(`${CONFIG.API_URL}/newsletter`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email:em}) });
+            var r = await fetch(`${CONFIG.NEWSLETTER_URL}`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email:em}) });
             var d = await r.json();
             alert(d.success ? 'Merci ! Vous êtes inscrit à notre newsletter.' : d.message || 'Erreur. Veuillez réessayer.');
             if (d.success) e.target.reset();
