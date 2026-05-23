@@ -5,8 +5,6 @@ const CONFIG = {
   BACKEND_URL: _isLocal ? 'http://localhost:5000' : 'https://api.agtemotors.com',
   API_URL:     _isLocal ? 'http://localhost:5000/api' : 'https://api.agtemotors.com/api',
 
-  // Vercel Serverless Functions — pour les formulaires (newsletter et devis)
-  // En production : URL relative → même domaine Vercel, pas de CORS, toujours disponible
-  NEWSLETTER_URL: _isLocal ? 'http://localhost:5000/api/newsletter' : '/api/newsletter',
-  DEVIS_URL:      _isLocal ? 'http://localhost:5000/api/devis'      : '/api/devis',
+  NEWSLETTER_URL: _isLocal ? 'http://localhost:5000/api/newsletter' : 'https://backend-agt-e-motors.onrender.com/api/newsletter',
+  DEVIS_URL:      _isLocal ? 'http://localhost:5000/api/devis'      : 'https://backend-agt-e-motors.onrender.com/api/devis',
 };
